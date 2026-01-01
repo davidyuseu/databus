@@ -1,0 +1,454 @@
+.root {
+	-fx-font-family: "Microsoft YaHei";
+	-sb-base: rgb(147, 147, 147);
+	-sb-base-dark: derive(-sb-base, -25%);
+
+	-sb-content-text: derive(-sb-base, -50%);
+	-sb-content-text-dimmed: derive(-sb-base, -20%);
+
+	-sb-content-background: derive(-sb-base, 98%);
+	-sb-sharp-edge-lo: derive(-sb-base, 20%);
+	-sb-sharp-edge-hi: derive(-sb-base, 90%);
+	-sb-flat: derive(-sb-base, 60%);
+	-sb-scrollbar-thumb: derive(-sb-base, 60%);
+
+	-sb-header-text: derive(-sb-base, -70%);
+	-sb-header-text-dimmed: derive(-sb-base, -30%);
+	-sb-header-detail: derive(-sb-base, -40%);
+}
+
+.root .text-field {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 12;
+}
+
+.root .text-area {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 12;
+}
+
+.root .list-cell {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 12;
+}
+
+.root .table-cell {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 12;
+}
+
+.root .label {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 12;
+}
+
+
+
+.worktablePane {
+	-fx-background-color: rgb(244,244,244);
+	-fx-border-color: -sb-sharp-edge-lo;
+	-fx-border-width: 0 1 1 1;
+	-fx-border-radius:  0 0 6 6;
+}
+
+.accordion > .titled-pane > .title {
+	-fx-background-color:
+			derive(-sb-content-background, -35%), -sb-sharp-edge-lo, -sb-sharp-edge-hi, -sb-flat;
+	-fx-background-insets: 0 0 -1 0, 0, 1 0 0 0, 2 0 0 0;
+	-fx-padding: 0.385em 0.692em 0.231em 0.692em;
+	-fx-font-size: 0.875em;
+	-fx-alignment: center-right;
+	-fx-effect: dropshadow( two-pass-box, rgba(0, 0, 0, 0.2), 5, 0.0, 0, 1 );
+}
+.accordion > .titled-pane > .title > .text {
+	-fx-fill: -sb-header-text;
+}
+
+.accordion > .first-titled-pane > .title {
+	-fx-background-insets: 0 0 -1 0, 0, 1 0 1 0, 2 0 0 0;
+}
+.accordion > .titled-pane > .title > .arrow-button {
+	-fx-padding: -0.154em 0.583em 0.0em 0.0em;
+}
+.accordion > .titled-pane > .title > .arrow-button > .arrow {
+	-fx-background-color: -sb-header-detail;
+	-fx-padding: 0.154em 0.231em 0.231em 0.231em; /* 2 3 3 3 */
+}
+
+.root .pane-shadow {
+	-fx-background-color: derive(-sb-content-background, -35%);
+	-fx-effect: dropshadow( two-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 0 );
+}
+
+.root .internal-titled {
+	-fx-expanded: true;
+	-fx-collapsible: false;
+	-fx-pref-width: 279;
+	-fx-text-fill: -sb-content-text-dimmed;
+}
+
+.root .internal-titled > .content {
+	-fx-background-color: transparent;
+}
+
+
+
+/*.root .internal-titled > .content .label {
+	-fx-text-fill: -sb-content-text;
+	-fx-font-size: 0.890em;
+	-fx-font-weight: bold;
+}*/
+
+/*.root .internal-titled > .content .check-box {
+	-fx-text-fill: -sb-content-text;
+	-fx-font-size: 0.890em;
+	-fx-font-weight: bold;
+}*/
+
+.root .outer-titled > .content > * {
+	-fx-border-width: 0 0 0 0;
+	/*-fx-padding: 0;*/
+}
+
+.root .scroll-pane {
+	-fx-background-color: transparent;
+	-fx-border-width: 0 0 0 0;
+	-fx-padding: 0;
+}
+
+.root .outer-nonscrolled-titled > .content > * {
+	-fx-background-color: transparent;
+	-fx-border-width: 0 0 0 0;
+	-fx-padding: 0;
+}
+
+.root .internal-titled > .title {
+	-fx-background-color: transparent;
+	-fx-border-width: 1 0 1 0;
+	-fx-border-color: E0E0E0FF;
+	-fx-padding: 0.385em 1.692em 0.231em 0.692em;
+	-fx-font-size: 0.875em;
+	-fx-alignment: center-left;
+	-fx-pref-height: 24;
+	-fx-effect: null;
+}
+
+.root .internal-titled .title > .arrow-button {
+	/*-fx-background-insets: 0;*/
+	/*-fx-backgroud-color: transparent;*/
+	/*-fx-padding: 0;*/
+	/*-fx-pref-width: 0;*/
+	/*-fx-pref-height: 0;*/
+	/*-fx-effect: null;*/
+	visibility: hidden;
+	-fx-padding: 0;
+}
+
+.root .internal-titled .title > .arrow-button > .arrow {
+	/*-fx-background-insets: 0;*/
+	/*-fx-backgroud-color: transparent;*/
+	/*-fx-padding: 0;*/
+	/*-fx-pref-width: 0;*/
+	/*-fx-pref-height: 0;*/
+	/*-fx-effect: null;*/
+	-fx-shape: null;
+	-fx-padding: 0;
+}
+
+.root .untitled-content {
+	/*-fx-padding: 4 0 8 0;*/
+	-fx-spacing: 4;
+}
+
+#expandBtn {
+	-fx-padding: 0;
+	-fx-background-color: transparent;
+	-fx-pref-width: 48;
+	-fx-pref-height: 20;
+}
+
+#expandBtn .icon {
+	/*-fx-padding: 0;*/
+	-fx-font-family: FontAwesome;
+	-fx-background-color: transparent;
+	-fx-font-size: 14;
+	-fx-fill: #2ac70d;
+}
+
+#expandBtn:hover .icon {
+	/*-fx-effect: dropshadow(gaussian, rgb(200, 200, 200), 2, 0, 0, 0);*/
+	-fx-fill: #46ff24;
+}
+
+#expandBtn:selected .icon {
+	/*-fx-effect: dropshadow(gaussian, rgb(200, 200, 200), 2, 0, 0, 0);*/
+	-fx-fill: #1d8709;
+}
+
+.root .handlerBtn {
+	-fx-font-family: FontAwesome;
+	-fx-background-color: transparent;
+	/*-fx-font-size: 14;*/
+	-fx-text-fill: #1d8709;
+	/*-fx-pref-width: 14;*/
+}
+
+.root .handlerBtn:hover {
+	/*-fx-effect: dropshadow(gaussian, rgb(200, 200, 200), 2, 0, 0, 0);*/
+	-fx-text-fill: #2ac70d;
+}
+
+.root .handlerBtn:pressed {
+	/*-fx-effect: dropshadow(gaussian, rgb(200, 200, 200), 2, 0, 0, 0);*/
+	-fx-text-fill: darkslategrey;
+}
+
+.root .awesomeBtn {
+	-fx-background-color: transparent;
+	-fx-padding: 6 0 0 0;
+	-fx-pref-width: 40;
+}
+
+.root .awesomeBtn .icon{
+	-fx-font-family: FontAwesome;
+	-fx-font-size: 14;
+	-fx-fill: #1d8709;
+}
+
+.root .awesomeBtn:hover .icon {
+	/*-fx-effect: dropshadow(gaussian, rgb(200, 200, 200), 2, 0, 0, 0);*/
+	-fx-fill: #2ac70d;
+}
+
+.root .awesomeBtn:pressed .icon {
+	/*-fx-effect: dropshadow(gaussian, rgb(200, 200, 200), 2, 0, 0, 0);*/
+	-fx-fill: darkslategrey;
+}
+
+/*-TableView-----------------------------------------------------------------*/
+.table-view {
+	-fx-font-family: "Microsoft YaHei";
+}
+
+/*.table-view .list-cell{
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 12;
+}
+
+.table-view .table-row-cell:odd{
+	-fx-background-color: #ffeec440;
+}
+.table-view .table-row-cell:selected{
+	-fx-background-color: #578dd8;
+	-fx-background-insets: 1 2 2 1;
+	-fx-text-fill: white;
+}
+.table-view .table-cell{
+	-fx-border-width: 0 1 1 0;
+	-fx-border-color: transparent #50505040 #50505065 transparent;
+	-fx-font-family: "Microsoft YaHei";
+}*/
+
+
+
+.listView0 .list-cell:odd {
+	-fx-background-color: #ffeec440;
+}
+
+.listView0 .list-cell:selected{
+	-fx-background-color: #578dd8;
+	-fx-background-insets: 1 2 2 1;
+	-fx-text-fill: black;
+}
+
+#minimapButton {
+	-fx-background-color: null;
+	-fx-background-insets: 0;
+	-fx-padding: 0;
+}
+
+#minimapButton .icon {
+	-fx-font-family: FontAwesome;
+	-fx-font-size: 18;
+	-fx-fill: darkslategrey;
+}
+
+#minimapButton:hover .icon {
+	/*-fx-effect: dropshadow(gaussian, rgb(200, 200, 200), 2, 0, 0, 0);*/
+	-fx-fill: #1d8709;
+}
+
+/*-centerSplitPane*/
+#centerSplitPane {
+	-fx-background-insets: 0;
+	-fx-padding: 0;
+}
+
+#centerSplitPane > .split-pane-divider {
+	-fx-background-color: -sb-base-dark;
+	-fx-padding: 0 0.5 0 0;
+}
+
+/*-leftPane*/
+#leftPane {
+	-fx-border-color: -sb-sharp-edge-lo;
+	-fx-border-width: 0 1 0 0;
+}
+
+#leftPane .fileReaderPane .title > .text{
+	-fx-fill: #1d8709
+}
+
+#leftPane .readerItem .dot {
+	/*-fx-mark-highlight-color:  #1d8709 ;*/
+	-fx-mark-color:  #1d8709 ;
+}
+
+#leftPane .internal-titled > .content > * {
+	/*-fx-padding: 12 21 4 21;*/
+	-fx-spacing: 4;
+}
+
+#leftPane .btnAdd {
+	-fx-background-color: transparent;
+	-fx-padding: 6 0 0 0;
+	-fx-pref-width: 32;
+}
+
+#leftPane .btnAdd .icon{
+	-fx-font-family: FontAwesome;
+	-fx-font-size: 14;
+	-fx-fill: #2ac70d;
+}
+
+#leftPane .btnAdd:hover .icon {
+	/*-fx-effect: dropshadow(gaussian, rgb(200, 200, 200), 2, 0, 0, 0);*/
+	-fx-fill: blue;
+}
+
+#leftPane .btnAdd:pressed .icon {
+	/*-fx-effect: dropshadow(gaussian, rgb(200, 200, 200), 2, 0, 0, 0);*/
+	-fx-fill: #548e8e;
+}
+
+#leftPane .titled-pane {
+	-fx-animated: false
+}
+
+#leftPane .titled-pane > .title {
+	-fx-background-insets: 0 0 -1 0, 0, 1 0 1 0, 2 0 0 0;
+	/*-fx-alignment: center-right;*/
+}
+
+#leftPane .titled-pane > .content {
+	-fx-border-width: 0 0 0 0;
+	-fx-padding: 0em;
+}
+
+#leftPane .titled-pane > .content > * > * {
+	-fx-border-width: 0 0 0 0;
+	-fx-padding: 0em;
+}
+
+#leftPane .label {
+	/*-fx-text-fill: -sb-content-text;*/
+	-fx-padding: 6 0 0 4;
+	-fx-font-size: 0.850em;
+	-fx-font-weight: bold;
+	-fx-pref-width: 220;
+}
+
+#leftPane .readerItem {
+	-fx-padding: 6 0 0 4;
+	-fx-font-size: 0.850em;
+	-fx-font-weight: bold;
+}
+
+#leftPane .scroll-pane  {
+	-fx-hbar-policy: never;
+}
+
+#componentsPane .content > * {
+	-fx-border-width: 0 0 0 0;
+	-fx-padding: 0em;
+}
+
+/*#componentsPane:hover {
+	-fx-effect: null;
+}*/
+
+/*-rightPane --------------------------------------------------------------------------------------------------------*/
+#rightPane {
+	-fx-border-color: -sb-sharp-edge-lo;
+	-fx-border-width: 0 0 0 1;
+}
+
+#rightPane .internal-titled > .content > * {
+	-fx-padding: 12 21 4 21;
+	-fx-spacing: 12;
+}
+
+#rightPane .titled-pane {
+	-fx-animated: false
+}
+
+#rightPane .titled-pane > .title {
+	-fx-background-insets: 0 0 -1 0, 0, 1 0 1 0, 2 0 0 0;
+}
+
+#rightPane .titled-pane > .content {
+	-fx-border-width: 0 0 0 0;
+	/*-fx-padding: 0em;*/
+}
+
+#rightPane .titled-pane > .content > * > * {
+	-fx-border-width: 0 0 0 0;
+	/*-fx-padding: 0em;*/
+}
+
+#comPropertyPane .content > * {
+	-fx-border-width: 0 0 0 0;
+	/*-fx-padding: 0;*/
+}
+
+.root .controllerStyle0 {
+	-fx-font-size: 12;
+	-fx-font-weight: bold;
+	-fx-text-fill: #494649FF;
+}
+
+.root .lbFilePath {
+	-fx-background-color:  #dcdcdc;
+	-fx-padding: 0 0 0 2;
+	-fx-text-overrun: CENTER_WORD_ELLIPSIS;
+}
+
+.root .multiSelObList .button {
+	-fx-text-fill: darkslategrey;
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 11;
+}
+
+.root .logView {
+	-fx-font-family: "Courier New";
+	-fx-font-size: 13;
+}
+
+.root .oriDataList .list-cell {
+	-fx-font-family: "Courier New";
+	-fx-font-size: 14;
+}
+/*
+#rightPane .scroll-pane  {
+	-fx-hbar-policy: never;
+}
+*/
+
+/*
+.processor-pane .titled-pane > .title > .arrow-button > .arrow {
+	-fx-arrows-visible: false;
+}
+*/
+
+
+

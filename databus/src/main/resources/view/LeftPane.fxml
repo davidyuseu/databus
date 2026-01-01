@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="leftPane" prefHeight="650.0" prefWidth="280.0" styleClass="leftPane" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sy.databus.LeftPaneController">
+   <children>
+      <TitledPane fx:id="componentsPane" animated="false" collapsible="false" prefHeight="1440.0" prefWidth="280.0" text="组件">
+         <font>
+            <Font name="Microsoft YaHei Bold" size="14.0" />
+         </font>
+         <content>
+            <Accordion fx:id="outerContainers" />
+         </content>
+      </TitledPane>
+   </children>
+</StackPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.jfoenix.controls.*?>-->
+<!--<?import java.lang.*?>-->
+<!--<?import java.util.*?>-->
+<!--<?import javafx.scene.*?>-->
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="analysisWorktable" prefHeight="226.0" prefWidth="500.0" styleClass="worktablePane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sy.databus.AnalysisWorktableController">
+   <children>
+      <Button layoutX="11.0" layoutY="28.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="68.0" text="开始" />
+      <Button layoutX="103.0" layoutY="28.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="68.0" text="暂停" />
+      <Button layoutX="196.0" layoutY="28.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="68.0" text="停止" />
+      <TableView layoutX="10.0" layoutY="71.0" prefHeight="144.0" prefWidth="481.0">
+        <columns>
+          <TableColumn prefWidth="40.0" text="序号" />
+          <TableColumn prefWidth="401.0" text="回放文件" />
+            <TableColumn prefWidth="39.0" text="进度" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnDisplayFReader" layoutX="460.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="36.0" />
+<!--      <JFXToggleButton layoutX="279.0" layoutY="17.0" size="8.0" text="单/全" />-->
+<!--      <JFXCheckBox layoutX="377.0" layoutY="32.0" text="同步时间" />-->
+   </children>
+</Pane>

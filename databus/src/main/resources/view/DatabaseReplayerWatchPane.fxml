@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="basePane" prefHeight="318.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sy.databus.DatabaseReaderWatchPaneController">
+    <children>
+        <Button fx:id="btnStart" disable="true" layoutX="135.0" layoutY="32.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="33.0" style="-fx-font-family: FontAwesome;" styleClass="handlerBtn" text="" />
+        <Button fx:id="btnPause" disable="true" layoutX="169.0" layoutY="32.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="33.0" style="-fx-font-family: FontAwesome;" styleClass="handlerBtn" text="" />
+        <Button fx:id="btnStop" disable="true" layoutX="203.0" layoutY="32.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="33.0" style="-fx-font-family: FontAwesome;" styleClass="handlerBtn" text="" />
+        <TableView fx:id="tableTasks" layoutY="128.0" prefHeight="191.0" prefWidth="366.0">
+            <columns>
+                <TableColumn fx:id="numColumn" prefWidth="31.0" text="序号" />
+                <TableColumn fx:id="nameColumn" prefWidth="239.0" text="回放任务" />
+                <TableColumn fx:id="startTimeColumn" prefWidth="95.0" text="开始时间" />
+                <!--                <TableColumn prefWidth="39.0" text="进度" />-->
+            </columns>
+        </TableView>
+        <Button fx:id="btnRefreshTasks" layoutX="-5.0" layoutY="3.0" mnemonicParsing="false" prefWidth="33.0" style="-fx-font-family: FontAwesome;" styleClass="handlerBtn" text="" />
+        <Label fx:id="labelTaskInfo" layoutY="104.0" prefHeight="17.0" prefWidth="219.0" text="准备解析" textAlignment="JUSTIFY" textFill="#1d8709" />
+        <Slider fx:id="sliderTimeline" layoutY="81.0" prefHeight="14.0" prefWidth="366.0" />
+        <Label fx:id="lbStartDate" layoutY="60.0" prefHeight="17.0" prefWidth="142.0" />
+        <Label fx:id="lbEndDate" layoutX="248.0" layoutY="60.0" prefHeight="17.0" prefWidth="119.0" />
+        <Label fx:id="labTimeProcess" layoutX="291.0" layoutY="95.0" prefHeight="17.0" prefWidth="73.0" />
+        <CheckBox fx:id="ckbMode" disable="true" layoutX="313.0" layoutY="7.0" mnemonicParsing="false" text="回放" />
+        <Label fx:id="lbCrntTask" layoutX="170.0" layoutY="60.0" textFill="darkblue">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+      <DatePicker fx:id="dpStartDate" layoutX="30.0" layoutY="3.0" prefHeight="25.0" prefWidth="127.0" />
+      <DatePicker fx:id="dpEndDate" layoutX="171.0" layoutY="3.0" prefHeight="25.0" prefWidth="127.0" />
+      <CheckBox fx:id="ckbSingleTask" layoutX="313.0" layoutY="34.0" mnemonicParsing="false" selected="true" text="单循环" />
+    </children>
+</Pane>

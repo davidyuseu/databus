@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="rightPane" prefHeight="650.0" prefWidth="280.0" styleClass="rightPane" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sy.databus.RightPaneController">
+   <children>
+      <TitledPane fx:id="comPropertyPane" animated="false" collapsible="false" prefHeight="1440.0" prefWidth="280.0" text="综合处理器">
+         <font>
+            <Font name="Microsoft YaHei Bold" size="14.0" />
+         </font>
+         <content>
+            <Accordion fx:id="outerContainers" prefHeight="630.0" prefWidth="280.0" />
+         </content>
+      </TitledPane>
+   </children>
+</StackPane>

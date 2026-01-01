@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="topHalfPart" prefHeight="630.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sy.databus.MainPaneController">
+			<children>
+				<VBox fx:id="topVBox" fillWidth="true" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+					<children>
+						<MenuBar fx:id="menuBar">
+							<menus>
+								<Menu fx:id="fileMenu" text="文件">
+									<items>
+										<MenuItem onAction="#load" text="加载文件" />
+										<Menu text="加载项目" visible="true">
+											<items>
+												<MenuItem onAction="#loadRlyParsing" text="文件解析任务" visible="true" />
+												<MenuItem onAction="#loadRTParsing" text="实时解析任务" visible="true" />
+												<MenuItem onAction="#loadSample" text="Default Skins - Small" visible="false" />
+												<MenuItem onAction="#loadSampleLarge" text="Default Skins - Large" visible="false" />
+<!--												<SeparatorMenuItem />-->
+												<MenuItem onAction="#loadTree" text="Tree Skins" visible="false" />
+												<MenuItem onAction="#loadTitled" text="处理节点" visible="false" />
+											</items>
+										</Menu>
+										<MenuItem onAction="#save" text="保存" />
+										<SeparatorMenuItem />
+										<MenuItem onAction="#exit" text="退出" />
+									</items>
+								</Menu>
+								<Menu fx:id="editMenu" text="编辑" visible="true">
+									<items>
+										<MenuItem accelerator="Shortcut+Z" onAction="#undo" text="撤回" />
+										<MenuItem accelerator="Shortcut+Y" onAction="#redo" text="重做" />
+										<SeparatorMenuItem />
+										<MenuItem accelerator="Shortcut+C" onAction="#copy" text="复制" />
+										<MenuItem accelerator="Shortcut+V" onAction="#paste" text="粘贴" />
+										<SeparatorMenuItem />
+										<!-- Added blank spaces to force menu to be wider. -->
+										<MenuItem accelerator="Shortcut+A" onAction="#selectAll" text="全选          " />
+										<MenuItem accelerator="Delete" onAction="#deleteSelection" text="删除" />
+										<MenuItem onAction="#clearAll" text="清理全部" />
+									</items>
+								</Menu>
+								<Menu text="操作" visible="false">
+									<items>
+										<MenuItem accelerator="Shortcut+N" onAction="#addNode" text="添加节点" />
+										<MenuItem fx:id="addConnectorButton" accelerator="Shortcut+E" onAction="#addConnector" text="添加连接" />
+										<MenuItem fx:id="clearConnectorsButton" accelerator="Shortcut+W" onAction="#clearConnectors" text="清除连接" />
+										<Menu fx:id="connectorTypeMenu" text="连接类型">
+											<items>
+												<RadioMenuItem fx:id="inputConnectorTypeButton" selected="true" text="输入" />
+												<RadioMenuItem fx:id="outputConnectorTypeButton" text="输出" />
+											</items>
+										</Menu>
+										<Menu fx:id="connectorPositionMenu" text="连接位置">
+											<items>
+												<RadioMenuItem fx:id="leftConnectorPositionButton" selected="true" text="Left" />
+												<RadioMenuItem fx:id="rightConnectorPositionButton" text="Right" />
+												<RadioMenuItem fx:id="topConnectorPositionButton" text="Top" />
+												<RadioMenuItem fx:id="bottomConnectorPositionButton" text="Bottom" />
+											</items>
+										</Menu>
+									</items>
+								</Menu>
+								<Menu text="设置" visible="true">
+									<items>
+										<RadioMenuItem fx:id="showGridButton" selected="true" text="显示网格" />
+										<RadioMenuItem fx:id="snapToGridButton" selected="true" text="对齐网格" />
+										<Menu fx:id="readOnlyMenu" text="Read Only" visible="false" />
+										<Menu text="Skin Type" visible="false">
+											<items>
+												<RadioMenuItem fx:id="defaultSkinButton" onAction="#setDefaultSkin" selected="true" text="Default" />
+												<RadioMenuItem fx:id="treeSkinButton" onAction="#setTreeSkin" text="Tree" />
+												<RadioMenuItem fx:id="titledSkinButton" onAction="#setTitledSkin" text="Titled" />
+											</items>
+										</Menu>
+										<!-- Added blank spaces to force menu to be wider. -->
+										<Menu fx:id="intersectionStyle" text="Intersection Style  " visible="false">
+											<items>
+												<RadioMenuItem fx:id="detouredStyleButton" onAction="#setDetouredStyle" selected="true" text="Detours" />
+												<RadioMenuItem fx:id="gappedStyleButton" onAction="#setGappedStyle" text="Gaps" />
+											</items>
+										</Menu>
+									</items>
+								</Menu>
+								<Menu text="模式">
+									<items>
+										<RadioMenuItem fx:id="editModeButton" selected="true" text="编辑模式" />
+										<RadioMenuItem fx:id="analysisModeButton" text="分析模式" />
+										<RadioMenuItem fx:id="missionModeButton" text="任务模式" visible="false" />
+									</items>
+								</Menu>
+								<Menu fx:id="viewMenu" disable="true" text="视图">
+									<items>
+										<RadioMenuItem fx:id="topologyBtn" selected="true" text="拓扑" />
+										<RadioMenuItem fx:id="monitorBtn" text="监视" />
+									</items>
+								</Menu>
+							</menus>
+						</MenuBar>
+						<BorderPane fx:id="topHalfPane" prefHeight="671.0" prefWidth="923.0">
+							<left>
+								<fx:include source="LeftPane.fxml" />
+							</left>
+							<center>
+							</center>
+							<right>
+								<fx:include source="RightPane.fxml" />
+							</right>
+               <center>
+                  <SplitPane fx:id="centerSplitPane" dividerPositions="0.66" orientation="VERTICAL">
+                     <items>
+                        <StackPane fx:id="watcherContainer" prefHeight="150.0" prefWidth="200.0" />
+                        <TabPane fx:id="pluginArea" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="tabLog" text=" 日志 ">
+                              <content>
+                                    <ScrollPane fx:id="logPane">
+                                       <padding>
+                                          <Insets left="4.0" top="4.0" />
+                                       </padding>
+                                    </ScrollPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="tabParamsView" text=" 参数集合 ">
+                              <content>
+                                    <VBox>
+                                       <children>
+                                          <HBox prefHeight="34.0" prefWidth="268.0" spacing="4.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#openTableTXTDir" prefWidth="101.0" text="打开tableTXT" />
+                                                <Button mnemonicParsing="false" onAction="#openExcelDir" prefWidth="101.0" text="打开excel" visible="false" />
+                                             </children>
+                                             <padding>
+                                                <Insets left="5.0" top="4.0" />
+                                             </padding>
+                                          </HBox>
+                                          <TabPane fx:id="tabPaneParamsViews" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" />
+                                       </children>
+                                    </VBox>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="tabOriDataView" text=" 原码显示 ">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab text="可视化">
+                                <content>
+                                    <ScrollPane fx:id="visPane" layoutX="6.0" layoutY="6.0" prefHeight="373.0" prefViewportHeight="371.0" prefViewportWidth="599.0" prefWidth="697.0">
+                                       <content>
+                                          <AnchorPane>
+                                             <children>
+                                                <Label fx:id="lbPathToVis" layoutX="33.0" layoutY="8.0" prefHeight="17.0" prefWidth="572.0" styleClass="lbFilePath" />
+                                                <Button fx:id="btnOpenToVis" layoutX="7.0" layoutY="5.0" mnemonicParsing="false" style="-fx-font-family: FontAwesome;" styleClass="handlerBtn" text="" />
+                                                <ListView fx:id="lvToVis" layoutX="6.0" layoutY="63.0" prefHeight="436.0" prefWidth="599.0" />
+                                                <Button fx:id="btnVisualize" layoutX="6.0" layoutY="34.0" mnemonicParsing="false" prefWidth="64.0" text="生成文件" />
+                                                <Button layoutX="75.0" layoutY="34.0" mnemonicParsing="false" onAction="#openVisDir" text="打开目录" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </items>
+                  </SplitPane>
+               </center>
+						</BorderPane>
+					</children>
+				</VBox>
+				<ToggleButton fx:id="minimapButton" focusTraversable="false" onAction="#toggleMinimap" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="4" />
+				<VBox alignment="TOP_CENTER" pickOnBounds="false" prefHeight="200.0" prefWidth="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<children>
+						<Label fx:id="modeLabel" prefHeight="17.0" prefWidth="56.0" text="工作模式">
+							<font>
+								<Font name="System Bold" size="12.0" />
+							</font>
+							<VBox.margin>
+								<Insets top="4.0" />
+							</VBox.margin>
+						</Label>
+						<Pane managed="false" pickOnBounds="false" prefHeight="169.0" prefWidth="1106.0" visible="false">
+							<children>
+<!--							  	<fx:include source="AnalysisWorktable.fxml" />-->
+<!--								<fx:include source="EditWorktable.fxml" />-->
+								<ToggleButton fx:id="expandBtn" layoutX="512.0" />
+							</children>
+							<VBox.margin>
+								<Insets top="4.0" />
+							</VBox.margin>
+						</Pane>
+					</children>
+				</VBox>
+			</children>
+		</AnchorPane>

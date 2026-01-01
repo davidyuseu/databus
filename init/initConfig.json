@@ -1,0 +1,8 @@
+{
+  "plane1Addr": "d2 ff 27 ff",
+  "plane2Addr": "d2 fe 27 ff",
+  "windowWeight": 1596,
+  "windowHeight": 970,
+  "outputSysLog": false,
+  "editModeKey": 1
+}
