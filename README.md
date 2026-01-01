@@ -2,7 +2,7 @@
 
 ## Overview
 
-<img width="1391" height="651" alt="image" src="https://github.com/user-attachments/assets/1e868a1f-9ab8-416f-88b4-2bb71bda76e2" />
+<img width="2716" height="1271" alt="图片 1" src="https://github.com/user-attachments/assets/341ce362-6654-41d3-9f85-32a60220e60f" />
 
 **DataBus** is a **co-located edge server, stream–batch unified data processing system** designed for **edge computing and real-time stream processing scenarios**.
 
@@ -18,7 +18,7 @@ The core philosophy of DataBus can be summarized in four aspects:
 ## Preview Version
 To facilitate quick evaluation, we provide a precompiled preview version of the system：
 - Platform: Windows x64
-[Download Precompiled Demo](https://github.com/davidyuseu/databus/releases/tag/artifact-preview)
+[Download Preview Build (for Evaluation)](https://github.com/davidyuseu/databus/releases/tag/artifact-preview)
 
 The following sections elaborate on these four aspects.
 
@@ -26,7 +26,7 @@ The following sections elaborate on these four aspects.
 
 ## 1\. Drag-and-Drop Visual DAG Construction of Data Pipelines
 
-<img width="1396" height="382" alt="image" src="https://github.com/user-attachments/assets/8f09f04b-79c9-4aab-a05d-53dfa9528a39" />
+<img width="1807" height="494" alt="图片 3" src="https://github.com/user-attachments/assets/6f57242d-04b9-4edd-a6c5-2b3d6f1c1965" />
 
 ### 1.1 Visual Pipeline Modeling for Engineering Productivity
 
@@ -45,7 +45,7 @@ This approach significantly lowers the barrier to building stream processing sys
 
 ### 1.2 Mapping Between DAG and Runtime Execution Model
 
-<img width="1396" height="606" alt="image" src="https://github.com/user-attachments/assets/49fb13e4-f9e9-46cf-93d2-15a23c494fa9" />
+<img width="1893" height="821" alt="图片 4" src="https://github.com/user-attachments/assets/309e24bd-9d1e-4375-82bc-a36adeade03b" />
 
 The visual DAG is not merely a presentation artifact; it directly corresponds to the runtime execution model:
 
@@ -59,9 +59,9 @@ When the DAG is modified, the system can safely reflect these changes in the run
 
 ## 2\. Lock-Free, Loosely Coupled Serial Components and Hot Plugging
 
-<img width="1396" height="491" alt="image" src="https://github.com/user-attachments/assets/5868c241-d87f-4f61-94c5-97236cb567ef" />
+<img width="1893" height="665" alt="图片 6" src="https://github.com/user-attachments/assets/8b7dadfd-d0bb-4c9f-b6ca-c231b7c7ea05" />
 
-<img width="1280" height="1012" alt="image" src="https://github.com/user-attachments/assets/ea690017-8e73-44cf-bf68-b06eab967702" />
+<img width="1280" height="1011" alt="图片 7" src="https://github.com/user-attachments/assets/3ff5448b-a5de-46f8-a08e-4660b8717f9a" />
 
 ### 2.1 Serial Component Model
 
@@ -107,7 +107,7 @@ This capability makes DataBus particularly suitable for **continuously evolving 
 
 ## 3\. Efficient Zero-Copy Data Transfer Between Operators
 
-<img width="2264" height="574" alt="image" src="https://github.com/user-attachments/assets/9e4c785a-aa7f-448b-b9a3-a4d10c49002d" />
+<img width="2316" height="596" alt="image" src="https://github.com/user-attachments/assets/cd35a587-bb96-48ea-b3bb-766e178b4620" />
 
 3.1 Shared Buffers and Shallow-Copy Semantics
 
@@ -154,7 +154,7 @@ In practical evaluations, the zero-copy mechanism significantly reduces CPU util
 
 ## 4\. In-Band Control Signal Mechanism
 
-<img width="2319" height="1498" alt="image" src="https://github.com/user-attachments/assets/56607f1c-812d-4e61-bddd-73ed593bb46b" />
+<img width="2268" height="1472" alt="image" src="https://github.com/user-attachments/assets/0cfb4283-df33-4e5c-bf88-80401354aab5" />
 
 ### 4.1 Unified Modeling of Data Flow and Control Flow
 
